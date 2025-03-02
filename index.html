@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,27 +15,45 @@
             --light: #f9f9f9;
             --dark: #333;
         }
-        
+
+        /* Global Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #57c5b6;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #1a5f7a;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
             background-color: var(--light);
             color: var(--dark);
             line-height: 1.6;
         }
-        
+
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         /* Header Styles */
         header {
             background-color: var(--primary);
@@ -43,54 +62,54 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        
+
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
         }
-        
+
         .logo img {
             transition: transform 0.3s;
         }
-        
+
         .logo img:hover {
             transform: scale(1.05);
         }
-        
+
         .nav-links {
             display: flex;
             list-style: none;
         }
-        
+
         .nav-links li {
             margin-left: 2rem;
         }
-        
+
         .nav-links a {
             color: white;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
         }
-        
+
         .nav-links a:hover {
             color: var(--accent);
         }
-        
+
         .mobile-menu {
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
         }
-        
+
         /* Mobile Nav Dropdown */
         .mobile-nav {
             display: none;
@@ -100,21 +119,21 @@
             right: 0;
             background-color: var(--primary);
             padding: 1rem;
-            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
         }
-        
+
         .mobile-nav.active {
             display: block;
         }
-        
+
         .mobile-nav ul {
             list-style: none;
         }
-        
+
         .mobile-nav ul li {
             margin-bottom: 1rem;
         }
-        
+
         .mobile-nav ul li a {
             color: white;
             text-decoration: none;
@@ -122,26 +141,26 @@
             display: block;
             padding: 0.5rem 0;
         }
-        
+
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
-            padding: 5rem 0;
+            padding: 11.3rem 0;
             text-align: center;
         }
-        
+
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
         }
-        
+
         .hero p {
             font-size: 1.2rem;
             max-width: 800px;
             margin: 0 auto 2rem;
         }
-        
+
         .btn {
             display: inline-block;
             background-color: var(--accent);
@@ -154,25 +173,39 @@
             border: none;
             cursor: pointer;
         }
-        
+
         .btn:hover {
             background-color: #e08a33;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        
+
         /* About Section */
+        .about-text p {
+            margin-bottom: 1rem;
+            /* Increase spacing between paragraphs */
+            line-height: 1.6;
+            /* Increase line height for better readability */
+        }
+
+        .about-text {
+            padding-right: 2rem;
+            /* Add some space on the right */
+        }
+
+        /* You might also want to add some more vertical space to the about section */
         .about {
             padding: 5rem 0;
+            /* Increase from 5rem to 6rem */
         }
-        
+
         .section-title {
             text-align: center;
             margin-bottom: 3rem;
             color: var(--primary);
             position: relative;
         }
-        
+
         .section-title::after {
             content: '';
             display: block;
@@ -181,73 +214,73 @@
             background-color: var(--accent);
             margin: 0.5rem auto 0;
         }
-        
+
         .about-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
             gap: 2rem;
         }
-        
+
         .about-text {
             flex: 1;
         }
-        
+
         .about-image {
             flex: 1;
             text-align: center;
         }
-        
+
         .about-image img {
             max-width: 100%;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        
+
         /* Divisions Section */
         .divisions {
             padding: 5rem 0;
             background-color: #f0f9ff;
         }
-        
+
         .divisions-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
-        
+
         .division-card {
             background-color: white;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        
+
         .division-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
-        
+
         .division-img {
             height: 200px;
             background-size: cover;
             background-position: center;
         }
-        
+
         .division-content {
             padding: 1.5rem;
         }
-        
+
         .division-content h3 {
             color: var(--primary);
             margin-bottom: 0.5rem;
         }
-        
+
         .division-content p {
             margin-bottom: 1rem;
         }
-        
+
         .btn-secondary {
             display: inline-block;
             background-color: white;
@@ -259,39 +292,54 @@
             transition: all 0.3s;
             border: 2px solid var(--primary);
         }
-        
+
         .btn-secondary:hover {
             background-color: var(--primary);
             color: white;
         }
-        
+
         /* Partners Section */
         .partners {
             padding: 5rem 0;
         }
-        
+
         .partners-logos {
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
+            /* Change from center to flex-start */
             flex-wrap: wrap;
             gap: 3rem;
             margin: 2rem 0;
         }
-        
+
+        .partner-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            height: 100%;
+            /* Set a fixed height */
+        }
+
         .partner-logo {
             max-width: 150px;
-            height: auto;
+            height: 80px;
+            /* Set fixed height for all logos */
+            object-fit: contain;
+            /* Maintain aspect ratio */
+            margin-bottom: 1rem;
+            /* Add consistent bottom margin */
             filter: grayscale(100%);
             opacity: 0.7;
             transition: all 0.3s;
         }
-        
+
         .partner-logo:hover {
             filter: grayscale(0%);
             opacity: 1;
         }
-        
+
         /* Join Section */
         .join {
             padding: 5rem 0;
@@ -299,16 +347,16 @@
             color: white;
             text-align: center;
         }
-        
+
         .join h2 {
             color: white;
         }
-        
+
         .join p {
             max-width: 800px;
             margin: 0 auto 2rem;
         }
-        
+
         .join-options {
             display: flex;
             justify-content: center;
@@ -316,7 +364,7 @@
             margin-top: 3rem;
             flex-wrap: wrap;
         }
-        
+
         .join-option {
             background-color: white;
             color: var(--dark);
@@ -324,77 +372,77 @@
             border-radius: 10px;
             width: 300px;
             text-align: left;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        
+
         .join-option h3 {
             color: var(--primary);
             margin-bottom: 1rem;
         }
-        
+
         /* Contact Section */
         .contact {
             padding: 5rem 0;
         }
-        
+
         .contact-container {
             display: flex;
             gap: 2rem;
         }
-        
+
         .contact-info {
             flex: 1;
         }
-        
+
         .contact-form {
             flex: 2;
         }
-        
+
         .contact-form form {
             display: grid;
             gap: 1rem;
         }
-        
+
         .form-group {
             display: flex;
             flex-direction: column;
         }
-        
+
         .form-group label {
             margin-bottom: 0.5rem;
             font-weight: 500;
         }
-        
+
         .form-group input,
         .form-group textarea {
             padding: 0.8rem;
             border: 1px solid #ddd;
             border-radius: 5px;
         }
-        
+
         .form-group textarea {
             min-height: 150px;
             resize: vertical;
         }
-        
+
         /* Form Validation Styles */
         .form-group input:invalid,
         .form-group textarea:invalid {
             border-color: #ff7782;
         }
-        
+
         .error-message {
             color: #ff7782;
             font-size: 0.9rem;
             margin-top: 0.3rem;
             display: none;
         }
-        
-        .form-group input:invalid + .error-message,
-        .form-group textarea:invalid + .error-message {
+
+        .form-group input:invalid+.error-message,
+        .form-group textarea:invalid+.error-message {
             display: block;
         }
-        
+
         /* Success Message */
         .success-message {
             background-color: #d4edda;
@@ -404,49 +452,49 @@
             margin-bottom: 1rem;
             display: none;
         }
-        
+
         /* Footer */
         footer {
             background-color: var(--dark);
             color: white;
             padding: 3rem 0 1rem;
         }
-        
+
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
             margin-bottom: 2rem;
         }
-        
+
         .footer-column h3 {
             margin-bottom: 1rem;
             color: var(--accent);
         }
-        
+
         .footer-column ul {
             list-style: none;
         }
-        
+
         .footer-column ul li {
             margin-bottom: 0.5rem;
         }
-        
+
         .footer-column ul li a {
             color: #bbb;
             text-decoration: none;
             transition: color 0.3s;
         }
-        
+
         .footer-column ul li a:hover {
             color: white;
         }
-        
+
         .social-icons {
             display: flex;
             gap: 1rem;
         }
-        
+
         .social-icon {
             display: inline-flex;
             align-items: center;
@@ -459,12 +507,12 @@
             font-size: 1.2rem;
             transition: all 0.3s;
         }
-        
+
         .social-icon:hover {
             background-color: var(--accent);
             transform: translateY(-3px);
         }
-        
+
         .copyright {
             text-align: center;
             margin-top: 2rem;
@@ -473,7 +521,7 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 1.5rem;
         }
-        
+
         /* Back to Top Button */
         .back-to-top {
             position: fixed;
@@ -492,81 +540,97 @@
             visibility: hidden;
             transition: all 0.3s;
             z-index: 999;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        
+
         .back-to-top.active {
             opacity: 1;
             visibility: visible;
         }
-        
+
         .back-to-top:hover {
             background-color: #e08a33;
             transform: translateY(-3px);
         }
-        
+
         /* Responsive Styles */
         @media (max-width: 992px) {
             .about-content {
                 flex-direction: column-reverse;
             }
-            
+
             .contact-container {
                 flex-direction: column;
             }
         }
-        
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
-            
+
             .mobile-menu {
                 display: block;
             }
-            
+
             .hero h1 {
                 font-size: 2.5rem;
             }
-            
+
             .divisions-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .join-options {
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .join-option {
                 width: 100%;
                 max-width: 400px;
             }
         }
-        
+
         /* Animation Classes */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        
+
         .fade-in {
             animation: fadeIn 0.6s ease-out forwards;
         }
-        
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.4s; }
-        .delay-3 { animation-delay: 0.6s; }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header>
         <div class="container">
             <nav>
                 <div class="logo">
-                <img src="Images/YETI.png" alt="YETI Logo" style="height: 50px; width: auto;">
-            </div>
+                    <img src="Images/YETI.png" alt="YETI Logo" style="height: 50px; width: auto;">
+                </div>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -592,25 +656,33 @@
             </ul>
         </div>
     </header>
-    
+
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <h1 class="fade-in">Thai Youth Global Pathways</h1>
-            <p class="fade-in delay-1">YETI connects talented Thai students with international opportunities through specialized divisions collaborating with established global organizations.</p>
+            <h1 class="fade-in">Youth Empowerment Thailand Initative</h1>
+            <p class="fade-in delay-1">YETI connects talented Thai students with international opportunities through
+                specialized divisions collaborating with established global organizations.</p>
             <a href="#join" class="btn fade-in delay-2">Join YETI</a>
         </div>
     </section>
-    
+
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
             <h2 class="section-title">About YETI</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. YETI serves as a central hub bridging Thai talent with worldwide advancement opportunities across multiple fields. Each division operates semi-independently and collaborates with established organizations in their respective fields.</p>
-                    <p>Nullam quis risus eget urna mollis ornare vel eu leo. Through our structured division system covering Business, Science, Academic, Healthcare, and Arts, we provide Thai youth with mentorship, training, and direct pathways to global opportunities tailored to their specific interests and career goals.</p>
-                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Our mission is to empower Thai students by creating accessible pathways for them to excel beyond national borders.</p>
+                    <p>YETI connects brilliant Thai minds with world-class opportunities. Through our specialized
+                        divisions in Business, Science, Academic, Healthcare, and Arts, we build bridges to
+                        international experiences that transform potential into achievements.</p>
+                    <p>We believe borders shouldn't limit brilliance. By partnering with established global
+                        organizations, we create clear pathways for Thai talent to shine on the world stage.</p>
+                    <p>More than just facilitating opportunities, we nurture lasting connections. Our members don't just
+                        participate globally—they become leaders within international networks, carrying Thailand's
+                        innovative spirit to every corner of the world.</p>
+                    <p>YETI exists because we envision a future where Thai excellence is recognized worldwide. Join us
+                        in turning this vision into reality, one opportunity at a time.</p>
                 </div>
                 <div class="about-image">
                     <img src="/api/placeholder/500/300" alt="Students collaborating">
@@ -618,7 +690,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Divisions Section -->
     <section class="divisions" id="divisions">
         <div class="container">
@@ -628,50 +700,58 @@
                     <div class="division-img" style="background-image: url('/api/placeholder/400/200')"></div>
                     <div class="division-content">
                         <h3>Business Division</h3>
-                        <p>Collaborates with YFS (Young Founders Summit) to provide entrepreneurship opportunities across Asia. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        <a href="#" class="btn-secondary" data-toggle="modal" data-target="#businessModal">Learn More</a>
+                        <p>Collaborates with YFS (Young Founders Summit) to provide entrepreneurship opportunities
+                            across Asia. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <a href="#" class="btn-secondary" data-toggle="modal" data-target="#businessModal">Learn
+                            More</a>
                     </div>
                 </div>
-                
+
                 <div class="division-card">
                     <div class="division-img" style="background-image: url('/api/placeholder/400/200')"></div>
                     <div class="division-content">
                         <h3>Science Division</h3>
-                        <p>Collaborates with International Research Olympiad to connect young scientists with global research opportunities. Nullam quis risus eget urna mollis ornare.</p>
+                        <p>Collaborates with International Research Olympiad to connect young scientists with global
+                            research opportunities. Nullam quis risus eget urna mollis ornare.</p>
                         <a href="#" class="btn-secondary" data-toggle="modal" data-target="#scienceModal">Learn More</a>
                     </div>
                 </div>
-                
+
                 <div class="division-card">
                     <div class="division-img" style="background-image: url('/api/placeholder/400/200')"></div>
                     <div class="division-content">
                         <h3>Academic Division</h3>
-                        <p>Collaborates with ACES to create pathways to North American academic and professional opportunities. Cum sociis natoque penatibus et magnis.</p>
-                        <a href="#" class="btn-secondary" data-toggle="modal" data-target="#academicModal">Learn More</a>
+                        <p>Collaborates with ACES to create pathways to North American academic and professional
+                            opportunities. Cum sociis natoque penatibus et magnis.</p>
+                        <a href="#" class="btn-secondary" data-toggle="modal" data-target="#academicModal">Learn
+                            More</a>
                     </div>
                 </div>
-                
+
                 <div class="division-card">
                     <div class="division-img" style="background-image: url('/api/placeholder/400/200')"></div>
                     <div class="division-content">
                         <h3>Healthcare Division</h3>
-                        <p>Future collaborations with healthcare organizations to provide international opportunities for medical students. Donec ullamcorper nulla non metus auctor fringilla.</p>
-                        <a href="#" class="btn-secondary" data-toggle="modal" data-target="#healthcareModal">Learn More</a>
+                        <p>Future collaborations with healthcare organizations to provide international opportunities
+                            for medical students. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                        <a href="#" class="btn-secondary" data-toggle="modal" data-target="#healthcareModal">Learn
+                            More</a>
                     </div>
                 </div>
-                
+
                 <div class="division-card">
                     <div class="division-img" style="background-image: url('/api/placeholder/400/200')"></div>
                     <div class="division-content">
                         <h3>Arts Division</h3>
-                        <p>Future collaborations with arts organizations to provide international opportunities for creative students. Vestibulum id ligula porta felis euismod semper.</p>
+                        <p>Future collaborations with arts organizations to provide international opportunities for
+                            creative students. Vestibulum id ligula porta felis euismod semper.</p>
                         <a href="#" class="btn-secondary" data-toggle="modal" data-target="#artsModal">Learn More</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Division Modals -->
     <div id="divisionModals">
         <!-- Business Modal -->
@@ -680,9 +760,12 @@
                 <span class="close-modal">&times;</span>
                 <h2>Business Division</h2>
                 <img src="/api/placeholder/800/400" alt="Business Division" style="width:100%;margin:1rem 0;">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare
+                    vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                </p>
                 <h3>Collaboration with YFS</h3>
-                <p>Our Business Division collaborates with Young Founders Summit (YFS) to provide entrepreneurship opportunities across Asia. Through this partnership, Thai students gain access to:</p>
+                <p>Our Business Division collaborates with Young Founders Summit (YFS) to provide entrepreneurship
+                    opportunities across Asia. Through this partnership, Thai students gain access to:</p>
                 <ul>
                     <li>5-day entrepreneurship bootcamps in Singapore</li>
                     <li>Mentorship from successful business leaders</li>
@@ -690,8 +773,10 @@
                     <li>A network of young entrepreneurs from across Asia</li>
                 </ul>
                 <h3>Programs</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                <a href="#join" class="btn">Join Business Division</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare
+                    vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                </p>
+                <a href="https://forms.gle/ynPRYyC8C34VHMid9" class="btn" target="_blank">Join Business Division</a>
             </div>
         </div>
 
@@ -701,9 +786,12 @@
                 <span class="close-modal">&times;</span>
                 <h2>Science Division</h2>
                 <img src="/api/placeholder/800/400" alt="Science Division" style="width:100%;margin:1rem 0;">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare
+                    vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                </p>
                 <h3>Collaboration with International Research Olympiad</h3>
-                <p>Our Science Division partners with the International Research Olympiad to connect young scientists with global research opportunities. Students benefit from:</p>
+                <p>Our Science Division partners with the International Research Olympiad to connect young scientists
+                    with global research opportunities. Students benefit from:</p>
                 <ul>
                     <li>International research competitions</li>
                     <li>Mentorship from established scientists</li>
@@ -711,8 +799,10 @@
                     <li>Global scientific networks</li>
                 </ul>
                 <h3>Programs</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                <a href="#join" class="btn">Join Science Division</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare
+                    vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                </p>
+                <a href="https://forms.gle/ynPRYyC8C34VHMid9" class="btn" target="_blank">Join Science Division</a>
             </div>
         </div>
 
@@ -722,9 +812,12 @@
                 <span class="close-modal">&times;</span>
                 <h2>Academic Division</h2>
                 <img src="/api/placeholder/800/400" alt="Academic Division" style="width:100%;margin:1rem 0;">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare
+                    vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                </p>
                 <h3>Collaboration with ACES</h3>
-                <p>Our Academic Division partners with ACES to create pathways to North American academic and professional opportunities. This includes:</p>
+                <p>Our Academic Division partners with ACES to create pathways to North American academic and
+                    professional opportunities. This includes:</p>
                 <ul>
                     <li>University application support</li>
                     <li>Internship placements</li>
@@ -732,8 +825,10 @@
                     <li>Networking with North American institutions</li>
                 </ul>
                 <h3>Programs</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                <a href="#join" class="btn">Join Academic Division</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare
+                    vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                </p>
+                <a href="https://forms.gle/ynPRYyC8C34VHMid9" class="btn" target="_blank">Join Academic Division</a>
             </div>
         </div>
 
@@ -743,9 +838,12 @@
                 <span class="close-modal">&times;</span>
                 <h2>Healthcare Division</h2>
                 <img src="/api/placeholder/800/400" alt="Healthcare Division" style="width:100%;margin:1rem 0;">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare
+                    vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                </p>
                 <h3>Future Collaborations</h3>
-                <p>Our Healthcare Division is establishing partnerships with international healthcare organizations to provide opportunities for medical students. Expected programs include:</p>
+                <p>Our Healthcare Division is establishing partnerships with international healthcare organizations to
+                    provide opportunities for medical students. Expected programs include:</p>
                 <ul>
                     <li>International medical internships</li>
                     <li>Research opportunities</li>
@@ -753,8 +851,10 @@
                     <li>Mentorship from healthcare professionals</li>
                 </ul>
                 <h3>Coming Soon</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                <a href="#contact" class="btn">Express Interest</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare
+                    vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                </p>
+                <a href="https://forms.gle/ynPRYyC8C34VHMid9" class="btn" target="_blank">Express Interest</a>
             </div>
         </div>
 
@@ -764,9 +864,12 @@
                 <span class="close-modal">&times;</span>
                 <h2>Arts Division</h2>
                 <img src="/api/placeholder/800/400" alt="Arts Division" style="width:100%;margin:1rem 0;">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare
+                    vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                </p>
                 <h3>Future Collaborations</h3>
-                <p>Our Arts Division is developing partnerships with international arts organizations to provide opportunities for creative students. Planned initiatives include:</p>
+                <p>Our Arts Division is developing partnerships with international arts organizations to provide
+                    opportunities for creative students. Planned initiatives include:</p>
                 <ul>
                     <li>International arts exhibitions</li>
                     <li>Cultural exchange programs</li>
@@ -774,8 +877,10 @@
                     <li>Mentorship from established artists</li>
                 </ul>
                 <h3>Coming Soon</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                <a href="#contact" class="btn">Express Interest</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare
+                    vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                </p>
+                <a href="https://forms.gle/ynPRYyC8C34VHMid9" class="btn" target="_blank">Express Interest</a>
             </div>
         </div>
     </div>
@@ -791,35 +896,55 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0,0,0,0.7);
+            background-color: rgba(0, 0, 0, 0.7);
             opacity: 0;
             transition: opacity 0.3s ease;
         }
-        
+
         .modal.show {
             display: block;
             opacity: 1;
         }
-        
+
         .modal-content {
-            position: relative;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.95);
             background-color: white;
-            margin: 5% auto;
             padding: 2rem;
             width: 90%;
             max-width: 800px;
             border-radius: 10px;
-            box-shadow: 0 5px 30px rgba(0,0,0,0.3);
-            transform: translateY(-50px);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease;
-            max-height: 90vh;
+            max-height: 85vh;
             overflow-y: auto;
         }
-        
+
         .modal.show .modal-content {
-            transform: translateY(0);
+            transform: translate(-50%, -50%) scale(1);
         }
-        
+
+        /* Custom Scrollbar for Modal */
+        .modal-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .modal-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .modal-content::-webkit-scrollbar-thumb {
+            background: #57c5b6;
+            border-radius: 10px;
+        }
+
+        .modal-content::-webkit-scrollbar-thumb:hover {
+            background: #1a5f7a;
+        }
+
         .close-modal {
             position: absolute;
             top: 1rem;
@@ -830,33 +955,34 @@
             cursor: pointer;
             transition: color 0.3s;
         }
-        
+
         .close-modal:hover {
             color: var(--primary);
         }
-        
+
         .modal h2 {
             color: var(--primary);
             margin-bottom: 1rem;
         }
-        
+
         .modal h3 {
             color: var(--primary);
             margin: 1.5rem 0 0.5rem;
         }
-        
-        .modal p, .modal ul {
+
+        .modal p,
+        .modal ul {
             margin-bottom: 1rem;
         }
-        
+
         .modal ul {
             margin-left: 1.5rem;
         }
-        
+
         .modal .btn {
             margin-top: 1rem;
         }
-        
+
         @media (max-width: 768px) {
             .modal-content {
                 width: 95%;
@@ -865,79 +991,66 @@
             }
         }
     </style>
-    
+
     <!-- Partners Section -->
     <section class="partners" id="partners">
         <div class="container">
             <h2 class="section-title">Our Partners</h2>
-            <p class="text-center">We collaborate with established organizations to provide the best opportunities for Thai students.</p>
+            <p class="text-center">We collaborate with established organizations to provide the best opportunities for
+                Thai students.</p>
             <div class="partners-logos">
                 <div class="partner-item">
-                    <img src="/api/placeholder/150/80" alt="YFS Logo" class="partner-logo">
-                    <h4>Young Founders Summit</h4>
+                    <img src="Images/wavesparks-primary+(1).png" alt="Wavesparks Logo" class="partner-logo">
+                    <h4>Wavesparks (FKA Young Founders Summit)</h4>
                 </div>
                 <div class="partner-item">
-                    <img src="/api/placeholder/150/80" alt="ACES Logo" class="partner-logo">
+                    <img src="Images/ACES.jpg" alt="ACES Logo" class="partner-logo">
                     <h4>ACES</h4>
                 </div>
                 <div class="partner-item">
-                    <img src="/api/placeholder/150/80" alt="International Research Olympiad Logo" class="partner-logo">
+                    <img src="Images/iro.webp" alt="International Research Olympiad Logo" class="partner-logo">
                     <h4>International Research Olympiad</h4>
                 </div>
             </div>
             <div class="partner-description text-center">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare
+                    vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                </p>
                 <a href="#contact" class="btn-secondary">Become a Partner</a>
             </div>
         </div>
     </section>
-    
+
     <!-- Join Section -->
     <section class="join" id="join">
         <div class="container">
             <h2 class="section-title">Join YETI</h2>
-            <p>Whether you're a student looking for opportunities or a leader wanting to contribute, there's a place for you at YETI.</p>
-            
+            <p>Whether you're a student looking for opportunities or a leader wanting to contribute, there's a place for
+                you.</p>
+
             <div class="join-options">
                 <div class="join-option">
                     <h3>For Students</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Access international opportunities, mentorship, and resources tailored to your interests and career goals.</p>
                     <div id="student-form-container">
-                        <form id="student-form" class="join-form">
-                            <div class="form-group">
-                                <label for="student-name">Full Name</label>
-                                <input type="text" id="student-name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="student-email">Email</label>
-                                <input type="email" id="student-email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="student-division">Interested Division</label>
-                                <select id="student-division" required>
-                                    <option value="">Select Division</option>
-                                    <option value="business">Business</option>
-                                    <option value="science">Science</option>
-                                    <option value="academic">Academic</option>
-                                    <option value="healthcare">Healthcare</option>
-                                    <option value="arts">Arts</option>
-                                </select>
-                            </div>
-                            <button type="submit" class="btn">Apply Now</button>
-                        </form>
+                        <p>Fill out our application form to join YETI and access opportunities in your field of
+                            interest.</p>
+                        <a href="https://forms.gle/ynPRYyC8C34VHMid9" class="btn" target="_blank"
+                            style="margin-top: 1rem;">Apply Now</a>
                     </div>
                 </div>
-                
+
                 <div class="join-option">
                     <h3>For Leaders</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Help shape international pathways for Thai talent by leading one of our specialized divisions.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Help shape international pathways for
+                        Thai talent by leading one of our specialized divisions.</p>
                     <a href="https://calendly.com/k-samorapoom/30min" class="btn" target="_blank">Book a Meeting</a>
-                    <p class="small-text" style="margin-top: 1rem; font-size: 0.9rem;">Interested in a leadership role? Schedule a 30-minute meeting to discuss opportunities.</p>
+                    <p class="small-text" style="margin-top: 1rem; font-size: 0.9rem;">Interested in a leadership role?
+                        Schedule a 30-minute meeting to discuss opportunities.</p>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
@@ -968,7 +1081,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="contact-form">
                     <div id="success-message" class="success-message">Your message has been sent successfully!</div>
                     <form id="contact-form">
@@ -977,42 +1090,44 @@
                             <input type="text" id="name" required>
                             <span class="error-message">Please enter your name</span>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" id="email" required>
                             <span class="error-message">Please enter a valid email address</span>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="subject">Subject</label>
                             <input type="text" id="subject" required>
                             <span class="error-message">Please enter a subject</span>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="message">Message</label>
                             <textarea id="message" required></textarea>
                             <span class="error-message">Please enter your message</span>
                         </div>
-                        
+
                         <button type="submit" class="btn">Send Message</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3><img src="Images/YETI.png" alt="YETI Logo" style="height: 40px; width: auto; margin-bottom: 8px;"></h3>
-                    <p>Thai Youth Global Pathways</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+                    <h3><img src="Images/YETI.png" alt="YETI Logo"
+                            style="height: 40px; width: auto; margin-bottom: 8px;"></h3>
+                    <p>Youth Empowerment Thailand Initative</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis
+                        ornare vel eu leo.</p>
                 </div>
-                
+
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul>
@@ -1024,7 +1139,7 @@
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-column">
                     <h3>Divisions</h3>
                     <ul>
@@ -1035,7 +1150,7 @@
                         <li><a href="#" data-toggle="modal" data-target="#artsModal">Arts Division</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-column">
                     <h3>Connect</h3>
                     <div class="social-icons">
@@ -1046,9 +1161,10 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="copyright">
-                <p>&copy; <span id="current-year">2025</span> YETI - Thai Youth Global Pathways. All rights reserved.</p>
+                <p>&copy; <span id="current-year">2025</span> YETI - Thai Youth Global Pathways. All rights reserved.
+                </p>
             </div>
         </div>
     </footer>
@@ -1062,12 +1178,12 @@
     <script>
         // Set current year in footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
-        
+
         // Mobile Menu Toggle
         const mobileMenuButton = document.querySelector('.mobile-menu');
         const mobileNav = document.querySelector('.mobile-nav');
-        
-        mobileMenuButton.addEventListener('click', function() {
+
+        mobileMenuButton.addEventListener('click', function () {
             mobileNav.classList.toggle('active');
             if (mobileNav.classList.contains('active')) {
                 mobileMenuButton.innerHTML = '<i class="fas fa-times"></i>';
@@ -1075,20 +1191,20 @@
                 mobileMenuButton.innerHTML = '<i class="fas fa-bars"></i>';
             }
         });
-        
+
         // Close mobile menu when clicking on a link
         document.querySelectorAll('.mobile-nav a').forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', function () {
                 mobileNav.classList.remove('active');
                 mobileMenuButton.innerHTML = '<i class="fas fa-bars"></i>';
             });
         });
-        
+
         // Modal functionality
         const modals = document.querySelectorAll('.modal');
         const modalButtons = document.querySelectorAll('[data-toggle="modal"]');
         const closeButtons = document.querySelectorAll('.close-modal');
-        
+
         modalButtons.forEach(button => {
             button.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -1097,19 +1213,19 @@
                 document.body.style.overflow = 'hidden';
             });
         });
-        
+
         function closeModal(modal) {
             modal.classList.remove('show');
             document.body.style.overflow = '';
         }
-        
+
         closeButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const modal = button.closest('.modal');
                 closeModal(modal);
             });
         });
-        
+
         modals.forEach(modal => {
             modal.addEventListener('click', (e) => {
                 if (e.target === modal) {
@@ -1117,7 +1233,7 @@
                 }
             });
         });
-        
+
         // Escape key closes modals
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
@@ -1128,15 +1244,15 @@
                 });
             }
         });
-        
+
         // Smooth Scrolling for Anchor Links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 if (this.getAttribute('href') === '#') return;
-                
+
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
-                
+
                 if (targetElement) {
                     e.preventDefault();
                     window.scrollTo({
@@ -1146,9 +1262,9 @@
                 }
             });
         });
-        
+
         // Form Submission (Demo only)
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
             e.preventDefault();
             document.getElementById('success-message').style.display = 'block';
             this.reset();
@@ -1156,16 +1272,10 @@
                 document.getElementById('success-message').style.display = 'none';
             }, 5000);
         });
-        
-        document.getElementById('student-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your application! We will contact you soon.');
-            this.reset();
-        });
-        
+
         // Back to Top Button
         const backToTopButton = document.querySelector('.back-to-top');
-        
+
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
                 backToTopButton.classList.add('active');
@@ -1173,27 +1283,27 @@
                 backToTopButton.classList.remove('active');
             }
         });
-        
+
         // Scroll Animation
         const fadeElements = document.querySelectorAll('.fade-in');
-        
+
         function checkFade() {
             fadeElements.forEach(element => {
                 const elementTop = element.getBoundingClientRect().top;
                 const windowHeight = window.innerHeight;
-                
+
                 if (elementTop < windowHeight - 50) {
                     element.style.opacity = "1";
                     element.style.transform = "translateY(0)";
                 }
             });
         }
-        
+
         window.addEventListener('scroll', checkFade);
         window.addEventListener('load', checkFade);
-        
+
         // Additional Styling for Partner Items
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const style = document.createElement('style');
             style.textContent = `
                 .partner-item {
@@ -1260,4 +1370,5 @@
         });
     </script>
 </body>
+
 </html>
